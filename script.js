@@ -2,6 +2,11 @@ const firstBox = document.querySelector('#firstBox');
 const secondBox = document.querySelector('#secondBox');
 const thirdBox = document.querySelector('#thirdBox');
 
+const firstList = document.querySelector('#firstList');
+const secondList = document.querySelector('#secondList');
+const thirdList = document.querySelector('#thirdList');
+
+
 const slots = ['first','second','third'];
 
 const users = [
@@ -15,26 +20,26 @@ const render = ()=> {
     // First Box's
     const firstUsers = users.map((person) => {
         if (person.slot === "first") {
-            return `<li> ${person.name}</li>`
+            return `<button> ${person.name}</button>`
         }
     }).join('');
-    firstBox.innerHTML = firstUsers;
+    firstList.innerHTML = firstUsers;
 
     // Second Box's
     const secondUsers = users.map((person) => {
-        if (person.slot === "first") {
-            return `<li> ${person.name}</li>`
+        if (person.slot === "second") {
+            return `<button> ${person.name}</button>`
         }
     }).join('');
-    secondBox.innerHTML = secondUsers;
+    secondList.innerHTML = secondUsers;
 
     // Third Box
     const thirdUsers = users.map((person) => {
-        if (person.slot === "first") {
-            return `<li> ${person.name}</li>`
+        if (person.slot === "third") {
+            return `<button> ${person.name}</button>`
         }
     }).join('');
-    thirdBox.innerHTML = thirdUsers;
+    thirdList.innerHTML = thirdUsers;
 }
 
-console.log(users)
+render(users);
